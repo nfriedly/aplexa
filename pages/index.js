@@ -1,26 +1,46 @@
 import React from 'react';
 import Router from 'next/router';
-import { getInstance } from '../aplexa';
+import Aplexa from '../lib/aplexa';
+import { loadCredentials } from '../lib/credentials';
 import Layout from '../components/layout';
+import NowPlaying from '../components/now-playing';
 
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.aplexa = getInstance();
+    console.log('index constructor', props)
+    this.state = props.initialState;
     this.update = this.update.bind(this);
   }
 
   componentDidMount() {
-    if (!this.aplexa.isInitialized()) {
+    console.log('index did mount', this.props)
+    const { credentials } = this.props;
+    if (credentials && credentials.password) {
+      console.log('got creds, starting aplexa');
+      this.aplexa = new Aplexa(credentials);
+      this.update();
+    } else {
       Router.push('/login');
-      return;
     }
-    clearTimeout(this.nextUpdateTimeout);
-    this.update();
   }
 
+  static async getInitialProps(ctx) {
+    console.log('getinitprops')
+    const credentials = loadCredentials(ctx);
+    console.log('get initial props credentials', credentials)
+    let initialState = {};
+    if (credentials && credentials.password) {
+      initialState = await new Aplexa(credentials).getAlexaNowPlaying();
+    }
+    return {
+      credentials,
+      initialState,
+    };
+  }
+
+  // todo: move this logic to Aplexa class, make it trigger an event with the update
   async update() {
     const data = await this.aplexa.getAlexaNowPlaying();
     this.setState(data);
@@ -34,31 +54,19 @@ class Index extends React.Component {
   }
 
   render() {
+    const {
+      playing,
+    } = this.state;
     return (
       <Layout>
-        {this.state.playing
+        {playing
           ? (
-            <div className="now-playing">
-              <h1>
-                {this.state.title}
-                {' '}
-                <small>by</small>
-                {' '}
-                {this.state.artist}
-              </h1>
-              <h2>
-                <small>From the album</small>
-                {' '}
-                {this.state.album}
-              </h2>
-              <img src={this.state.albumPic} className="album-art" alt="album art" />
-              <img src={this.state.artistPic} className="artist-art" alt="artist picture" />
-            </div>
+            <NowPlaying {...this.state} />
           )
           : (
             <div className="not-playing">
               <h1>Not currently playing</h1>
-              <button onClick={this.update}>Update</button>
+              <button type="button" className="btn" onClick={this.update}>🔄 Refresh</button>
             </div>
           )
         }

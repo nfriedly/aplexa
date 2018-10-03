@@ -1,6 +1,6 @@
 
 require('dotenv').load({ silent: true });
-const aplexa = require('./aplexa');
+const aplexa = require('./lib/aplexa');
 
 const hostname = process.env.PLEX_SERVER;
 const username = process.env.PLEX_USERNAME;
