@@ -1,0 +1,117 @@
+{
+  "MediaContainer": {
+    "size": 1,
+    "Metadata": [
+      {
+        "addedAt": "1493398175",
+        "duration": "213290",
+        "grandparentKey": "/library/metadata/21129",
+        "grandparentRatingKey": "21129",
+        "grandparentThumb": "/library/metadata/21129/thumb/1538461134",
+        "grandparentTitle": "Branches",
+        "guid": "com.plexapp.agents.plexmusic://gracenote/track/259672312-BF8A0873AF3EB845719D7C3484941075/259672318-6C5CFB7983903C6E1DC9B9FCD639E47A?lang=en",
+        "index": "6",
+        "key": "/library/metadata/21136",
+        "lastViewedAt": "1536843862",
+        "librarySectionID": "7",
+        "librarySectionKey": "/library/sections/7",
+        "librarySectionTitle": "Music",
+        "originalTitle": "Branches",
+        "parentIndex": "1",
+        "parentKey": "/library/metadata/21130",
+        "parentRatingKey": "21130",
+        "parentThumb": "/library/metadata/21130/thumb/1493398216",
+        "parentTitle": "Thou Art the Dream",
+        "ratingCount": "10040",
+        "ratingKey": "21136",
+        "sessionKey": "47",
+        "summary": "",
+        "thumb": "/library/metadata/21130/thumb/1493398216",
+        "title": "To the Desert",
+        "type": "track",
+        "updatedAt": "1493398284",
+        "viewCount": "2",
+        "viewOffset": "30052",
+        "Media": [
+          {
+            "audioChannels": "2",
+            "audioCodec": "mp3",
+            "bitrate": "257",
+            "container": "mp3",
+            "duration": "213290",
+            "id": "24718",
+            "selected": true,
+            "Part": [
+              {
+                "container": "mp3",
+                "duration": "213290",
+                "file": "/e/music/Branches/Thou Art the Dream/06 - To the Desert.mp3",
+                "hasThumbnail": "1",
+                "id": "27785",
+                "key": "/library/parts/27785/1493412028/file.mp3",
+                "size": "6860608",
+                "decision": "directplay",
+                "selected": true,
+                "Stream": [
+                  {
+                    "albumGain": "-9.90",
+                    "albumPeak": "1.000000",
+                    "albumRange": "8.123445",
+                    "audioChannelLayout": "stereo",
+                    "bitrate": "251",
+                    "channels": "2",
+                    "codec": "mp3",
+                    "displayTitle": "Unknown (MP3 Stereo)",
+                    "gain": "-9.84",
+                    "id": "44278",
+                    "index": "0",
+                    "loudness": "-8.16",
+                    "lra": "9.96",
+                    "peak": "1.000000",
+                    "samplingRate": "44100",
+                    "selected": "1",
+                    "streamType": "2",
+                    "location": "direct"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Mood": [
+          {
+            "filter": "mood=3648",
+            "id": "3648",
+            "tag": "Dreamy Brooding"
+          }
+        ],
+        "User": {
+          "id": "1",
+          "thumb": "https://plex.tv/users/ee8a23a65177303a/avatar?c=1537363673",
+          "title": "nfriedly"
+        },
+        "Player": {
+          "address": "34.236.153.76",
+          "device": "Alexa",
+          "machineIdentifier": "8e86bf7d-86c4-4629-bd56-e8dc1b86bc3f",
+          "model": "",
+          "platform": "Alexa",
+          "platformVersion": "",
+          "product": "Plex for Alexa",
+          "remotePublicAddress": "34.236.153.76",
+          "state": "playing",
+          "title": "Alexa",
+          "vendor": "",
+          "version": "",
+          "local": false,
+          "userID": 1
+        },
+        "Session": {
+          "id": "amzn1.ask.device.AFT6DVVOGOSJJK4CFLFPISHZHEHTBKBVNQEFR74YCDOPDYT6EJDHSOHBNQCTMMZLD2WAAD5R3EPZJTHRNKPEMCIKRD3I6D6CJBPX3NHSX2UPM3GEPJHZZCBCR2HSS4MAZ3J23UBWK7MJIWGZ4VSR7Z45OIIUCJYVLTXQTQYWCZBJDSSXCV6PU",
+          "bandwidth": 672,
+          "location": "wan"
+        }
+      }
+    ]
+  }
+}

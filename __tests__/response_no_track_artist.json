@@ -1,0 +1,115 @@
+{
+  "MediaContainer": {
+    "size": 1,
+    "Metadata": [
+      {
+        "addedAt": "1535501016",
+        "art": "/library/metadata/77000/art/1538461019",
+        "duration": "370714",
+        "grandparentArt": "/library/metadata/77000/art/1538461019",
+        "grandparentKey": "/library/metadata/77000",
+        "grandparentRatingKey": "77000",
+        "grandparentThumb": "/library/metadata/77000/thumb/1538461019",
+        "grandparentTitle": "System of a Down",
+        "guid": "com.plexapp.agents.plexmusic://gracenote/track/20651348-1239C5791C1C39FD8C85AF3CD967066D/116450995-E692FA524DE4C1E289FF8E50A9AF2816?lang=en",
+        "index": "14",
+        "key": "/library/metadata/77003",
+        "librarySectionID": "7",
+        "librarySectionKey": "/library/sections/7",
+        "librarySectionTitle": "Music",
+        "parentIndex": "1",
+        "parentKey": "/library/metadata/77001",
+        "parentRatingKey": "77001",
+        "parentThumb": "/library/metadata/77001/thumb/1535501095",
+        "parentTitle": "Toxicity",
+        "ratingCount": "6350277",
+        "ratingKey": "77003",
+        "sessionKey": "56",
+        "summary": "",
+        "thumb": "/library/metadata/77001/thumb/1535501095",
+        "title": "Aerials",
+        "type": "track",
+        "updatedAt": "1535501416",
+        "viewOffset": "130000",
+        "Media": [
+          {
+            "audioChannels": "2",
+            "audioCodec": "mp3",
+            "bitrate": "256",
+            "container": "mp3",
+            "duration": "370714",
+            "id": "116744",
+            "selected": true,
+            "Part": [
+              {
+                "container": "mp3",
+                "duration": "370714",
+                "file": "/e/music/System of a down/(System of a Down)-Aerials.mp3",
+                "id": "120416",
+                "key": "/library/parts/120416/1465499696/file.mp3",
+                "size": "11864064",
+                "decision": "directplay",
+                "selected": true,
+                "Stream": [
+                  {
+                    "albumGain": "-10.55",
+                    "albumPeak": "1.000000",
+                    "albumRange": "7.360946",
+                    "audioChannelLayout": "stereo",
+                    "bitrate": "256",
+                    "channels": "2",
+                    "codec": "mp3",
+                    "displayTitle": "Unknown (MP3 Stereo)",
+                    "gain": "-9.75",
+                    "id": "171723",
+                    "index": "0",
+                    "loudness": "-8.25",
+                    "lra": "17.33",
+                    "peak": "1.000000",
+                    "samplingRate": "44100",
+                    "selected": "1",
+                    "streamType": "2",
+                    "location": "direct"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Mood": [
+          {
+            "filter": "mood=3650",
+            "id": "3650",
+            "tag": "Energetic Anxious"
+          }
+        ],
+        "User": {
+          "id": "1",
+          "thumb": "https://plex.tv/users/ee8a23a65177303a/avatar?c=1537363673",
+          "title": "nfriedly"
+        },
+        "Player": {
+          "address": "34.201.130.234",
+          "device": "Alexa",
+          "machineIdentifier": "8e86bf7d-86c4-4629-bd56-e8dc1b86bc3f",
+          "model": "",
+          "platform": "Alexa",
+          "platformVersion": "",
+          "product": "Plex for Alexa",
+          "remotePublicAddress": "34.201.130.234",
+          "state": "playing",
+          "title": "Alexa",
+          "vendor": "",
+          "version": "",
+          "local": false,
+          "userID": 1
+        },
+        "Session": {
+          "id": "amzn1.ask.device.AFT6DVVOGOSJJK4CFLFPISHZHEHTBKBVNQEFR74YCDOPDYT6EJDHSOHBNQCTMMZLD2WAAD5R3EPZJTHRNKPEMCIKRD3I6D6CJBPX3NHSX2UPM3GEPJHZZCBCR2HSS4MAZ3J23UBWK7MJIWGZ4VSR7Z45OIIUCJYVLTXQTQYWCZBJDSSXCV6PU",
+          "bandwidth": 538,
+          "location": "wan"
+        }
+      }
+    ]
+  }
+}
