@@ -1,6 +1,4 @@
-const withSass = require('@zeit/next-sass');
-
-module.exports = withSass({
+module.exports = {
   webpack: (_config, { isServer }) => {
     const config = _config;
     if (!isServer) {
@@ -9,4 +7,4 @@ module.exports = withSass({
     }
     return config;
   },
-});
+};
