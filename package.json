@@ -1,6 +1,6 @@
 {
   "name": "aplexa",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Tells the currently playing song from the Alexa Plex skill",
   "main": "lib/aplexa.js",
   "scripts": {
