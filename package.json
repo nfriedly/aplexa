@@ -28,6 +28,7 @@
   "dependencies": {
     "@babel/register": "^7.0.0",
     "cls-bluebird": "^2.1.0",
+    "document-visibility": "^1.0.1",
     "dotenv": "^6.0.0",
     "net": "^1.0.2",
     "next": "^7.0.1",

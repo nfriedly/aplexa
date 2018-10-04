@@ -1,5 +1,19 @@
+
+const Time = ({ ms }) => {
+  const totalSeconds = Math.ceil(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+  return (
+    <span>
+      {minutes}
+      :
+      {seconds}
+    </span>
+  );
+};
+
 const NowPlaying = ({
-  title, artist, album, albumPic, artistPic,
+  title, artist, album, albumPic, artistPic, duration, offset,
 }) => (
   <div className="row now-playing">
     <style jsx>
@@ -21,6 +35,13 @@ const NowPlaying = ({
       <h2>
         {album}
       </h2>
+      <p style={{ marginTop: '1em' }} title="Plex data may be outdated by up to ~30 seconds">
+        {'~ '}
+        <Time ms={offset} />
+        {' / '}
+        <Time ms={duration} />
+      </p>
+      <progress max={duration} value={offset} style={{ width: '100%' }} />
     </div>
     <div className="col-md-8">
       <img src={albumPic || artistPic} style={{ width: '100%' }} className="album-art" alt="album art" />
