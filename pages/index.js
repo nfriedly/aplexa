@@ -31,11 +31,9 @@ class Index extends React.Component {
   static async getInitialProps(ctx) {
     const credentials = loadCredentials(ctx);
     let initialState = { playing: false };
-    console.log('gip: creds', credentials);
     if (credentials && credentials.password) {
       initialState = await new Aplexa(credentials).getAlexaNowPlaying();
     }
-    console.log('gip: init state', initialState)
     return {
       credentials,
       initialState,

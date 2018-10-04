@@ -83,7 +83,7 @@ class Index extends React.Component {
             <input id="password" type="password" className="form-control" value={password} onChange={this.handleChange} ref={this.password} placeholder="Password" />
           </div>
           <div className="form-group form-check">
-            <input type="checkbox" className="form-check-input" id="savePassword" defaultChecked={savePassword} onChange={this.toggleSavePasswprd} aria-describedby="password-help" />
+            <input type="checkbox" className="form-check-input" id="savePassword" defaultChecked={savePassword} onChange={this.toggleSavePassword} aria-describedby="password-help" />
             <label className="form-check-label" htmlFor="savePassword">Save password</label>
             <small className="form-text text-muted" id="password-help">Credentials are stored in a base64-encoded cookie (I.e. not very securely)</small>
           </div>
