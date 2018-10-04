@@ -9,48 +9,37 @@ import NowPlaying from '../components/now-playing';
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    console.log('index constructor', props)
     this.state = props.initialState;
-    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
-    console.log('index did mount', this.props)
     const { credentials } = this.props;
     if (credentials && credentials.password) {
-      console.log('got creds, starting aplexa');
-      this.aplexa = new Aplexa(credentials);
-      this.update();
+      this.aplexa = new Aplexa({ poll: true, ...credentials });
+      this.aplexa.on('song', this.setState.bind(this));
     } else {
       Router.push('/login');
     }
   }
 
+  componentWillUnmount() {
+    if (this.aplexa) {
+      this.aplexa.stop();
+    }
+  }
+
   static async getInitialProps(ctx) {
-    console.log('getinitprops')
     const credentials = loadCredentials(ctx);
-    console.log('get initial props credentials', credentials)
-    let initialState = {};
+    let initialState = { playing: false };
+    console.log('gip: creds', credentials);
     if (credentials && credentials.password) {
       initialState = await new Aplexa(credentials).getAlexaNowPlaying();
     }
+    console.log('gip: init state', initialState)
     return {
       credentials,
       initialState,
     };
-  }
-
-  // todo: move this logic to Aplexa class, make it trigger an event with the update
-  async update() {
-    const data = await this.aplexa.getAlexaNowPlaying();
-    this.setState(data);
-    let nextUpdateDelay;
-    if (data.playing) {
-      nextUpdateDelay = 5 * 1000; // data.duration - data.offset + 5000;
-    } else {
-      nextUpdateDelay = 60 * 1000;
-    }
-    this.nextUpdateTimeout = setTimeout(this.update, nextUpdateDelay);
   }
 
   render() {
@@ -66,7 +55,6 @@ class Index extends React.Component {
           : (
             <div className="not-playing">
               <h1>Not currently playing</h1>
-              <button type="button" className="btn" onClick={this.update}>🔄 Refresh</button>
             </div>
           )
         }

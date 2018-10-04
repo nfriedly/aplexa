@@ -15,6 +15,9 @@ class Index extends React.Component {
     super(props);
     // todo: some way to cache the creds
     this.state = Object.assign({}, DEFAULT_STATE, props.credentials);
+    if (props.credentials && props.credentials.password) {
+      this.state.savePassword = true;
+    }
     this.handleChange = this.handleChange.bind(this);
     this.toggleSavePassword = this.toggleSavePassword.bind(this);
     this.login = this.login.bind(this);
