@@ -1,5 +1,5 @@
-
 require('dotenv').load({ silent: true });
+require('@babel/register');
 const aplexa = require('./lib/aplexa');
 
 const hostname = process.env.PLEX_SERVER;
