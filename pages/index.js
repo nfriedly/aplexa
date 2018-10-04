@@ -32,7 +32,11 @@ class Index extends React.Component {
     const credentials = loadCredentials(ctx);
     let initialState = { playing: false };
     if (credentials && credentials.password) {
-      initialState = await new Aplexa(credentials).getAlexaNowPlaying();
+      try {
+        initialState = await new Aplexa(credentials).getAlexaNowPlaying();
+      } catch (err) {
+        console.error('Unable to load data from plex:', err);
+      }
     }
     return {
       credentials,
