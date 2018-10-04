@@ -7,7 +7,8 @@
     "test": "eslint .",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "quick-start": "next start",
+    "start": "next build && next start"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,6 @@
     "net": "^1.0.2",
     "next": "^7.0.1",
     "next-cookies": "^1.0.2",
-    "node-sass": "^4.9.3",
     "plex-api": "^5.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
