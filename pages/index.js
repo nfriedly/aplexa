@@ -48,7 +48,7 @@ class Index extends React.Component {
       try {
         initialState = await new Aplexa(credentials).getAlexaNowPlaying();
       } catch (error) {
-        initialState = { error };
+        initialState = { error: error.message || error.toString() };
         // eslint-disable-next-line no-console
         console.error('Unable to load data from plex:', error);
       }
