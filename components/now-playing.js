@@ -15,14 +15,28 @@ const Time = ({ ms }) => {
 const NowPlaying = ({
   title, artist, album, albumPic, artistPic, duration, offset,
 }) => (
-  <div className="row now-playing">
+  <div className="grid-container now-playing">
     <style jsx>
       {`
       p { margin-bottom: 0; }
       h2 { margin-top: 6px; }
+      .album-art { width: 100%; }
+      .art-col { padding: 0; margin: 0 -15px; }
+      @media (min-width: 768px) {
+        .now-playing { margin-top: 15px; }
+        .album-art { width: auto; max-width: 100%; margin: auto; display: block; min-height: 100%;  }
+        .grid-container {
+          border: 1px solid black;
+          display: grid;
+        }
+        .art-col {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+        }
+      }
   `}
     </style>
-    <div className="col-md-4">
+    <div className="artist-title meta-col">
       <h1>
         {title}
         {' '}
@@ -31,6 +45,11 @@ const NowPlaying = ({
       <h2>
         {artist}
       </h2>
+    </div>
+    <div className="art-col">
+      <img src={albumPic || artistPic} className="album-art" alt="album art" />
+    </div>
+    <div className="album-time meta-col">
       <p>from</p>
       <h2>
         {album}
@@ -42,9 +61,6 @@ const NowPlaying = ({
         <Time ms={duration} />
       </p>
       <progress max={duration} value={offset} style={{ width: '100%' }} />
-    </div>
-    <div className="col-md-8">
-      <img src={albumPic || artistPic} style={{ width: '100%' }} className="album-art" alt="album art" />
     </div>
   </div>
 );

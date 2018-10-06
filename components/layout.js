@@ -19,9 +19,6 @@ body {
   background-color: #000;
   color: #eee;
 }
-* {
-  max-width: 100%;
-}
     `}
       </style>
     </Head>
