@@ -1,2 +1,5 @@
 scratch/
 !.eslintrc.js
+out/
+.next/
+node_modules/

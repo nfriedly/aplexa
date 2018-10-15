@@ -12,6 +12,8 @@ const Time = ({ ms }) => {
   );
 };
 
+// todo: consider running css transition while the next image is loading
+
 const NowPlaying = ({
   title, artist, album, albumPic, artistPic, duration, offset,
 }) => (
@@ -47,7 +49,7 @@ const NowPlaying = ({
       </h2>
     </div>
     <div className="art-col">
-      <img src={albumPic || artistPic} className="album-art" alt="album art" />
+      { (albumPic || artistPic) ? <img src={albumPic || artistPic} className="album-art" alt="album art" /> : null}
     </div>
     <div className="album-time meta-col">
       <p>from</p>

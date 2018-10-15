@@ -5,6 +5,8 @@ import Aplexa from '../lib/aplexa';
 import { loadCredentials } from '../lib/credentials';
 import Layout from '../components/layout';
 import NowPlaying from '../components/now-playing';
+import NotPlaying from '../components/not-playing';
+import Loading from '../components/loading';
 
 
 class Index extends React.Component {
@@ -43,7 +45,7 @@ class Index extends React.Component {
 
   static async getInitialProps(ctx) {
     const credentials = loadCredentials(ctx);
-    let initialState = { playing: false };
+    let initialState = { playing: false, loading: true };
     if (credentials && credentials.password) {
       try {
         initialState = await new Aplexa(credentials).getAlexaNowPlaying();
@@ -121,26 +123,13 @@ class Index extends React.Component {
 
   render() {
     const {
-      playing, error,
+      loading, playing, error,
     } = this.state;
     return (
-      <Layout>
-        {error ? (
-          <div className="alert alert-danger" role="alert" style={{ margin: '20px 0' }}>
-            {error.message || error}
-          </div>
-        ) : null}
-        {playing
-          ? (
-            <NowPlaying {...this.state} />
-          )
-          : (
-            <div className="not-playing">
-              <h1>Not currently playing</h1>
-            </div>
-          )
-        }
-
+      <Layout error={error}>
+        { loading ? <Loading /> : null }
+        { playing ? <NowPlaying {...this.state} /> : null }
+        { !loading && !playing ? <NotPlaying /> : null }
       </Layout>
     );
   }

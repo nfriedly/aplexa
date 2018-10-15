@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, error }) => (
   <div className="container">
     <Head>
       <meta charSet="utf-8" />
@@ -22,6 +22,11 @@ body {
     `}
       </style>
     </Head>
+    {error ? (
+      <div className="alert alert-danger" role="alert" style={{ margin: '20px 0' }}>
+        {error.message || error}
+      </div>
+    ) : null}
     {children}
   </div>
 );
