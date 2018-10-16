@@ -1,5 +1,5 @@
 import React from 'react';
-import Router from 'next/router';
+import Router from '../lib/router';
 import { loadCredentials, storeCredentials } from '../lib/credentials';
 import Layout from '../components/layout';
 

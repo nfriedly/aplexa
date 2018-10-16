@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "next build",
     "export": "npm run build && next export",
-    "export-gh-pages": "GH_PAGES=true npm run export",
+    "export-gh-pages": "PREFIX=/aplexa npm run export",
     "quick-start": "next start",
     "start": "next build && next start"
   },

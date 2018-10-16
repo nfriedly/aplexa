@@ -1,6 +1,6 @@
 import React from 'react';
-import Router from 'next/router';
 import Visibility from 'document-visibility';
+import Router from '../lib/router';
 import Aplexa from '../lib/aplexa';
 import { loadCredentials } from '../lib/credentials';
 import Layout from '../components/layout';

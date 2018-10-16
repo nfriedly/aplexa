@@ -8,5 +8,5 @@ module.exports = {
     return config;
   },
   // set up the url prefix for a gh-pages export
-  assetPrefix: process.env.GH_PAGES ? '/aplexa' : '',
+  assetPrefix: process.env.PREFIX || '',
 };
