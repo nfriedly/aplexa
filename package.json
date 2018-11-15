@@ -34,7 +34,7 @@
     "dotenv": "^6.0.0",
     "net": "^1.0.2",
     "next": "^7.0.2",
-    "next-cookies": "git+https://github.com/nfriedly/next-cookies.git#patch-1",
+    "next-cookies": "^1.0.4",
     "plex-api": "^5.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
