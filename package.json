@@ -33,7 +33,7 @@
     "document-visibility": "^1.0.1",
     "dotenv": "^6.0.0",
     "net": "^1.0.2",
-    "next": "^7.0.2",
+    "next": "^9.3.2",
     "next-cookies": "^1.0.4",
     "plex-api": "^5.2.1",
     "react": "^16.5.2",
