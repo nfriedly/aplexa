@@ -8,7 +8,6 @@ import NowPlaying from '../components/now-playing';
 import NotPlaying from '../components/not-playing';
 import Loading from '../components/loading';
 
-
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -124,11 +123,12 @@ class Index extends React.Component {
   render() {
     const {
       loading, playing, error,
+      title, artist, album, albumPic, artistPic, duration, offset,
     } = this.state;
     return (
       <Layout error={error}>
         { loading ? <Loading /> : null }
-        { playing ? <NowPlaying {...this.state} /> : null }
+        { playing ? <NowPlaying title={title} artist={artist} album={album} albumPic={albumPic} artistPic={artistPic} duration={duration} offset={offset} /> : null }
         { !loading && !playing ? <NotPlaying /> : null }
       </Layout>
     );

@@ -14,7 +14,7 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     // todo: some way to cache the creds
-    this.state = Object.assign({}, DEFAULT_STATE, props.credentials);
+    this.state = { ...DEFAULT_STATE, ...props.credentials };
     if (props.credentials && props.credentials.password) {
       this.state.savePassword = true;
     }
@@ -42,6 +42,12 @@ class Index extends React.Component {
     };
   }
 
+  handleChange(e) {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  }
+
   login(e) {
     e.preventDefault();
     // todo: perform a request to validate the credentials before storing
@@ -49,14 +55,8 @@ class Index extends React.Component {
     Router.push('/');
   }
 
-  handleChange(e) {
-    this.setState({
-      [e.target.id]: e.target.value,
-    });
-  }
-
   toggleSavePassword() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       savePassword: !prevState.savePassword,
     }));
   }
