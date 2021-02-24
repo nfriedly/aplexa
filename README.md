@@ -1,3 +1,3 @@
-# aplexa: Get info on what the Plex skill for Alexa is currently playing
+# aplexa
 
-Web App that shows what song the Plex skill for Alexa is currently playing. Mobile friendly UI. Built with Next.js.
+Web App that shows what song the Plex skill for Alexa is currently playing, including album art and a gustimated progress bar. Mobile friendly UI. Built with Next.js.
